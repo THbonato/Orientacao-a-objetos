@@ -30,7 +30,9 @@ public class GerenciadorReserva {
     }
     
     public void listarReserva(){
-        
+        for (Reserva reserva : reservas) {
+            reserva.toString();
+        }
     }
     
     public void buscarReserva(String nomeReserva){
