@@ -1,6 +1,8 @@
 
 package classes;
 
+import java.util.Objects;
+
 public class Musica {
     private String titulo;
     private double duracao;
@@ -24,6 +26,34 @@ public class Musica {
         sb.append("_________________________");
         return sb.toString();
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.titulo);
+        hash = 47 * hash + (int) (Double.doubleToLongBits(this.duracao) ^ (Double.doubleToLongBits(this.duracao) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Musica other = (Musica) obj;
+        if (Double.doubleToLongBits(this.duracao) != Double.doubleToLongBits(other.duracao)) {
+            return false;
+        }
+        return Objects.equals(this.titulo, other.titulo);
+    }
+    
+    
     
     public void imprimir(){
         System.out.println(toString());

@@ -15,27 +15,30 @@ import classes.Musica;
  */
 public class MusicaMain {
     public static void main(String[] args) {
-        Artista artista1 = new Artista("Artista 1");
-        Album album1 = new Album("Álbum 1", 2020);
-        Album album2 = new Album("Álbum 2", 2021);
+        Artista artista1 = new Artista("Queen");
+        Album album1 = new Album("A Night at the Opera", 1975);
+        Album album2 = new Album("Jazz", 1978);
 
-        artista1.artistaComMaisAlbuns(album1);
-        artista1.artistaComMaisAlbuns(album2);
+        artista1.adicionarAlbum(album1);
+        artista1.adicionarAlbum(album2);
 
-        Musica musica1 = new Musica("Música 1", 3.30);
-        Musica musica2 = new Musica("Música 2", 4.00);
+        Musica musica1 = new Musica("Bohemian Rhapsody", 5.55);
+        Musica musica2 = new Musica("Princes of the Universe", 3.31);
 
-        artista1.adicionarMusica(album1.getNome(), musica1);
-        artista1.adicionarMusica(album1.getNome(), musica2); // Adicionando duas músicas ao Álbum 1
+        artista1.adicionarMusica("FKAY", musica1);
+        artista1.adicionarMusica("FKAY", musica2);
 
-        // Supondo a existência de um gerenciador para facilitar as consultas
         Gerenciador gerenciador = new Gerenciador();
         gerenciador.adicionarArtista(artista1);
 
         Artista artistaComMaisAlbuns = gerenciador.artistaComMaisAlbuns();
         System.out.println("Artista com mais álbuns: " + artistaComMaisAlbuns.getNome());
 
-        Album albumComMaisMusicas = gerenciador.álbumComMaisMusicas();
+        Album albumComMaisMusicas = gerenciador.albumComMaisMusicas();
         System.out.println("Álbum com mais músicas: " + albumComMaisMusicas.getNome());
+
+        System.out.println("------------------------------");
+        System.out.println("Detalhes");
+        System.out.println(artista1);
     }
 }

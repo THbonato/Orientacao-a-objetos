@@ -1,6 +1,8 @@
 
 package classes;
 
+import java.util.Objects;
+
 public class Roda {
     private double raio;
     private String material;
@@ -38,6 +40,38 @@ public class Roda {
     public void imprimir(){
         System.out.println(toString());
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.raio) ^ (Double.doubleToLongBits(this.raio) >>> 32));
+        hash = 97 * hash + Objects.hashCode(this.material);
+        hash = 97 * hash + Objects.hashCode(this.cor);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Roda other = (Roda) obj;
+        if (Double.doubleToLongBits(this.raio) != Double.doubleToLongBits(other.raio)) {
+            return false;
+        }
+        if (!Objects.equals(this.material, other.material)) {
+            return false;
+        }
+        return Objects.equals(this.cor, other.cor);
+    }
+    
+    
 
     public double getRaio() {
         return raio;

@@ -3,6 +3,7 @@ package classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Album {
     private String nome;
@@ -35,6 +36,38 @@ public class Album {
     public void adicionarMusica(Musica musica){
         this.listaMusicas.add(musica);
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + Objects.hashCode(this.nome);
+        hash = 17 * hash + this.ano;
+        hash = 17 * hash + Objects.hashCode(this.listaMusicas);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Album other = (Album) obj;
+        if (this.ano != other.ano) {
+            return false;
+        }
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        return Objects.equals(this.listaMusicas, other.listaMusicas);
+    }
+    
+    
 
     public String getNome() {
         return nome;
