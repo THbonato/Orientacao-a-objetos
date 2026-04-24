@@ -32,12 +32,16 @@ public class Funcionario {
         return sb.toString();
     }
     
-    public void adicionarProjeto(){
-    
+    public void adicionarProjeto(Projeto projeto){
+        this.listaProjetos.add(projeto);
     }
     
-    public void removerProjeto(){
-        
+    public void removerProjeto(Projeto projeto){
+        for(int i = 0; i <= this.listaProjetos.size(); i++){
+            if(projeto.equals(i)){
+                this.listaProjetos.remove(projeto);
+            }
+        }
     }
 
     public String getNome() {
@@ -63,6 +67,4 @@ public class Funcionario {
     public void setListaProjetos(List<Projeto> listaProjetos) {
         this.listaProjetos = listaProjetos;
     }
-    
-    
 }
