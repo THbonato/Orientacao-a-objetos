@@ -9,6 +9,8 @@ import classes.Gerenciador;
 public class Main {
 
     public static void main(String[] args) {
+        
+        //Teste
 
         Empresa empresa = new Empresa("TechSolutions Ltda.");
 
