@@ -3,6 +3,7 @@ package classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Projeto {
     private String nome_projeto;
@@ -27,7 +28,14 @@ public class Projeto {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        
+        sb.append("Nome: ").append(nome_projeto).append(" | ");
+        sb.append("Código: ").append(cod_projeto);
+        sb.append("Descrição: ").append(descricao).append(" | ");
+        sb.append("Funcionários: ");
+        for(int i = 0; i < listaFuncionarios.size(); i++){
+            sb.append(listaFuncionarios.get(i).getNome());
+            if(i < listaFuncionarios.size() - 1) sb.append(", ");
+        }
         return sb.toString();
     }
     
@@ -36,11 +44,7 @@ public class Projeto {
     }
     
     public void removerFuncionario(Funcionario funcionario){
-        for(int i = 0; i <= this.listaFuncionarios.size(); i++){
-            if(funcionario.equals(i)){
-                this.listaFuncionarios.remove(funcionario);
-            }
-        }
+        this.listaFuncionarios.remove(funcionario);
     }
 
     public String getNome_projeto() {
@@ -73,6 +77,28 @@ public class Projeto {
 
     public void setListaFuncionarios(List<Funcionario> listaFuncionarios) {
         this.listaFuncionarios = listaFuncionarios;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 71 * hash + Objects.hashCode(this.nome_projeto);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Projeto other = (Projeto) obj;
+        return Objects.equals(this.nome_projeto, other.nome_projeto);
     }
     
     

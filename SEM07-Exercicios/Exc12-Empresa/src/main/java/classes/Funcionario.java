@@ -3,6 +3,7 @@ package classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Funcionario {
     private String nome;
@@ -37,11 +38,7 @@ public class Funcionario {
     }
     
     public void removerProjeto(Projeto projeto){
-        for(int i = 0; i <= this.listaProjetos.size(); i++){
-            if(projeto.equals(i)){
-                this.listaProjetos.remove(projeto);
-            }
-        }
+        this.listaProjetos.remove(projeto);
     }
 
     public String getNome() {
@@ -67,4 +64,28 @@ public class Funcionario {
     public void setListaProjetos(List<Projeto> listaProjetos) {
         this.listaProjetos = listaProjetos;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 11 * hash + Objects.hashCode(this.nome);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Funcionario other = (Funcionario) obj;
+        return Objects.equals(this.nome, other.nome);
+    }
+    
+    
 }
