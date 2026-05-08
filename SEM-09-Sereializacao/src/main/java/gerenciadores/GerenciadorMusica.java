@@ -13,27 +13,29 @@ public class GerenciadorMusica {
         this.musicas = new ArrayList<>();
     }
 
-    public void adicionarMusica(Musica musica) {
-         musicas.add(musica);
+    public void adicionarMusica(Musica Novamusica) {
+        if(musicas.contains(Novamusica)){
+            System.out.println("Essa música já existe!");
+        }else{
+            musicas.add(Novamusica);
+        }
     }
 
-    public boolean removerMusica(String titulo) {
-        musicas.remove(titulo);
-        return true;
-        //CONFERIR ESSE MÉTODO
+    public void removerMusica(String titulo) {
+        if(!musicas.contains(titulo)){
+            System.out.println("Essa música não existe!");
+        }else{
+            musicas.remove(titulo);
+        }
     }
 
-    public Musica buscarMusica(String titulo) {
+    public void buscarMusica(String titulo) {
         
-        if(musicas.contains(titulo)){
-            for (Musica musica : musicas) {
-                if(musica.getTitulo().equals(titulo)){
-                    return musica;
-                }
+        for(int i = 0; i <= musicas.size(); i++){
+            if(musicas.get(i).getTitulo() == titulo){
+                System.out.println("A música " + musicas.get(i).getTitulo() + "existe!");
             }
         }
-        
-        //REVISAR ESSE MÉTODO
     }
 
     public void salvarMusica(Musica musica) {
@@ -47,14 +49,11 @@ public class GerenciadorMusica {
     @Override
     public String toString() {
        StringBuilder sb = new StringBuilder();
-       sb.append("Música: ").append("\n");
-       sb.append("Título: ");
-       sb.append("Autor: ");
-       sb.append("Duração: ");
-       sb.append("Preço: ");
-       return sb.toString();
-       
-       //ACABAR ESSE MÉTODO
+        for(int i = 0; i <= musicas.size(); i++){
+            sb.append(musicas.get(i));
+        }
+        
+        return sb.toString();
     }
 
 		// Novo: Salva a lista um arquivo CSV
