@@ -4,6 +4,8 @@
 
 package com.mycompany.proj_cadprod;
 
+import gui.FrCadProduto;
+
 /**
  *
  * @author tbona
@@ -11,6 +13,8 @@ package com.mycompany.proj_cadprod;
 public class Proj_CadProd {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        FrCadProduto tela = new FrCadProduto();
+        tela.setVisible(true);
     }
 }
