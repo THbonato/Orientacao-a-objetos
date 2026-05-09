@@ -7,10 +7,7 @@ package com.mycompany.sem.sereializacao;
 import classes.Musica;
 import gerenciadores.GerenciadorMusica;
 
-/**
- *
- * @author tbona
- */
+
 public class MainSerializacao {
 
     public static void main(String[] args) {
