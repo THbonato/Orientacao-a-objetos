@@ -31,4 +31,6 @@ public class Funcionario extends Pessoa{
     protected double getBonificacao(){
         return this.salario * 0.10;
     }
+
+    //Fazer get e set
 }
