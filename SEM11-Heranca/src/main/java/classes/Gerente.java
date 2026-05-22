@@ -1,10 +1,18 @@
 package classes;
 public class Gerente extends Funcionario{
+  
+  protected int senha;
+  protected int funcionarioGerenciados;
+  
   public Gerente(){
     super();
+    this.senha = 0;
+    this.funcionariosGerenciados = 0;
   }
-  public Gerente(String nome, int idade, String cpf, double salario){
+  public Gerente(String nome, int idade, String cpf, double salario, int senha, int funcionariosGerenciados){
     super(nome, idade, cpf, salario);
+    this.senha = senha;
+    this.funcionariosGerenciados = funcionariosGerenciados;
   }
   public double getBonificacao(){
     return this.salario * 0.15;
