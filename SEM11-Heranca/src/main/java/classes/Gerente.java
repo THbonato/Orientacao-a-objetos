@@ -2,7 +2,7 @@ package classes;
 public class Gerente extends Funcionario{
   
   private int senha;
-  private int funcionarioGerenciados;
+  private int funcionariosGerenciados;
   
   public Gerente(){
     super();
@@ -10,7 +10,7 @@ public class Gerente extends Funcionario{
     this.funcionariosGerenciados = 0;
   }
   public Gerente(String nome, int idade, String cpf, double salario, int senha, int funcionariosGerenciados){
-    super(nome, idade, cpf, salario);
+    super(nome, idade, cpf); // incluir salario
     this.senha = senha;
     this.funcionariosGerenciados = funcionariosGerenciados;
   }

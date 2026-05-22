@@ -9,7 +9,7 @@ public class Diretor extends Funcionario{
     this.senha = "";
   }
   public Diretor(String nome, int idade, String cpf, double salario, String senha){
-    super(nome, idade, cpf, salario, senha);
+    super(nome, idade, cpf); // incluir salario
     this.senha = senha;
   }
   public double getBonificacao(){
