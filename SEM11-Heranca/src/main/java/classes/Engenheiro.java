@@ -1,7 +1,7 @@
 package classes;
 
 public class Engenheiro extends Funcionario{
-  public Engenehiro(){
+  public Engenheiro(){
     super();
   }
   public Engenheiro(String nome, int idade, String cpf, double salario){

@@ -12,9 +12,9 @@ public class Cliente extends Pessoa{
     }
     
     public void imprimir(){
-        super().imprimir();
+        super.imprimir();
     }
     public void preencher(){
-        super().preencher();
+        super.preencher();
     }
 }
