@@ -28,4 +28,7 @@ public class Funcionario extends Pessoa{
         System.out.println("Salário: ");
         this.salario = ler.nextDouble();
     }
+    protected double getBonificacao(){
+        return this.salario * 0.10;
+    }
 }
