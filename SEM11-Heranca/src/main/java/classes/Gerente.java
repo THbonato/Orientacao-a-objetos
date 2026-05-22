@@ -1,8 +1,8 @@
 package classes;
 public class Gerente extends Funcionario{
   
-  protected int senha;
-  protected int funcionarioGerenciados;
+  private int senha;
+  private int funcionarioGerenciados;
   
   public Gerente(){
     super();
