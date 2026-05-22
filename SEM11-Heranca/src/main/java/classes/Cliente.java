@@ -11,5 +11,10 @@ public class Cliente extends Pessoa{
         super();
     }
     
-    
+    public void imprimir(){
+        super().imprimir();
+    }
+    public void preencher(){
+        super().preencher();
+    }
 }
