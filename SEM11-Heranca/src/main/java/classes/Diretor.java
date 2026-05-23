@@ -26,4 +26,11 @@ public class Diretor extends Funcionario{
         this.senha = senha;
     }
   
+    public String getSenha(String senha){
+        return senha;
+    }
+    
+    public void setSenha(){
+        this.senha = senha;
+    }
 }
