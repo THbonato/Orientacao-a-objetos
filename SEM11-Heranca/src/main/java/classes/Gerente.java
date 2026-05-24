@@ -10,7 +10,7 @@ public class Gerente extends Funcionario{
     this.funcionariosGerenciados = 0;
   }
   public Gerente(String nome, int idade, String cpf, double salario, int senha, int funcionariosGerenciados){
-    super(nome, idade, cpf); // incluir salario
+    super(nome, idade, cpf, salario);
     this.senha = senha;
     this.funcionariosGerenciados = funcionariosGerenciados;
   }

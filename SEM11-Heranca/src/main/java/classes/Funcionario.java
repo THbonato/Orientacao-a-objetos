@@ -6,7 +6,7 @@ public class Funcionario extends Pessoa{
 
     protected double salario;
     
-    public Funcionario(String nome, int idade, String cpf) {
+    public Funcionario(String nome, int idade, String cpf, double salario) {
         super(nome, idade, cpf);
         this.salario = salario;
     }
